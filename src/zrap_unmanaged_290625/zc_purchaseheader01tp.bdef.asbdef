@@ -1,0 +1,24 @@
+projection;
+strict ( 2 );
+define behavior for ZC_PurchaseHeader01TP alias PurchaseHeader
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _PurchaseItem { create; }
+
+}
+
+define behavior for ZC_PurchaseItemTP alias PurchaseItem
+use etag
+
+{
+  use update;
+  use delete;
+
+  use association _PurchaseHeader;
+
+}

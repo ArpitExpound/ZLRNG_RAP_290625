@@ -1,0 +1,5 @@
+@EndUserText.label: 'Managed Purchase Order : Service Definition'
+define service ZSD_ManagedPurchaseOrder {
+  expose ZC_PurchaseOrderHeader as poh;
+  expose ZC_PurchaseOrderItem   as poi;
+}

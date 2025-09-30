@@ -1,0 +1,23 @@
+interface;
+define behavior for ZI_PurchaseHeader02TP alias PurchaseHeader
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _PurchaseItem { create; }
+
+}
+
+define behavior for ZI_PurchaseItemTP alias PurchaseItem
+use etag
+
+{
+  use update;
+  use delete;
+
+  use association _PurchaseHeader;
+
+}

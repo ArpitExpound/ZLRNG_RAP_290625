@@ -1,0 +1,230 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'PurchaseHeader', 
+    typeNamePlural: 'PurchaseHeaders', 
+    title: {
+      type: #STANDARD, 
+      label: 'PurchaseHeader', 
+      value: 'PurchaseID'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'PurchaseID', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_PurchaseHeader01TP with
+{
+  @UI.facet: [ {
+    id: 'idCollection', 
+    type: #COLLECTION, 
+    label: 'PurchaseHeader', 
+    position: 10 
+  }, 
+  {
+    id: 'idIdentification', 
+    parentId: 'idCollection', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'General Information', 
+    position: 20 
+  }, 
+  {
+    id: 'idPurchaseItem', 
+    type: #LINEITEM_REFERENCE, 
+    label: 'PurchaseItem', 
+    position: 30 , 
+    targetElement: '_PurchaseItem'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'PurchaseID'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'PurchaseID'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  PurchaseID;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'CompanyCode'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'CompanyCode'
+  } ]
+  CompanyCode;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'DocCategory'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'DocCategory'
+  } ]
+  DocCategory;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'DocType'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'DocType'
+  } ]
+  DocType;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #HIGH, 
+    label: 'VendorID'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'VendorID'
+  } ]
+  VendorID;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #HIGH, 
+    label: 'PurchOrg'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'PurchOrg'
+  } ]
+  PurchOrg;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #HIGH, 
+    label: 'PurchGroup'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'PurchGroup'
+  } ]
+  PurchGroup;
+  
+  @UI.lineItem: [ {
+    position: 80 , 
+    importance: #HIGH, 
+    label: 'Currency'
+  } ]
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Currency'
+  } ]
+  Currency;
+  
+  @UI.lineItem: [ {
+    position: 90 , 
+    importance: #HIGH, 
+    label: 'DocDate'
+  } ]
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'DocDate'
+  } ]
+  DocDate;
+  
+  @UI.lineItem: [ {
+    position: 100 , 
+    importance: #HIGH
+  } ]
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  CreatedBy;
+  
+  @UI.lineItem: [ {
+    position: 110 , 
+    importance: #HIGH, 
+    label: 'ChangedOn'
+  } ]
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'ChangedOn'
+  } ]
+  ChangedOn;
+  
+  @UI.lineItem: [ {
+    position: 120 , 
+    importance: #HIGH, 
+    label: 'Incoterms1'
+  } ]
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'Incoterms1'
+  } ]
+  Incoterms1;
+  
+  @UI.lineItem: [ {
+    position: 130 , 
+    importance: #HIGH, 
+    label: 'Incoterms2'
+  } ]
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'Incoterms2'
+  } ]
+  Incoterms2;
+  
+  @UI.lineItem: [ {
+    position: 140 , 
+    importance: #HIGH, 
+    label: 'PaymentTerms'
+  } ]
+  @UI.identification: [ {
+    position: 140 , 
+    label: 'PaymentTerms'
+  } ]
+  PaymentTerms;
+  
+  @UI.lineItem: [ {
+    position: 150 , 
+    importance: #HIGH
+  } ]
+  @UI.identification: [ {
+    position: 150 
+  } ]
+  Language;
+  
+  @UI.lineItem: [ {
+    position: 160 , 
+    importance: #HIGH, 
+    label: 'Status'
+  } ]
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'Status'
+  } ]
+  Status;
+  
+  @UI.hidden: true
+  Locallastchanged;
+  
+  @UI.hidden: true
+  Lastchanged;
+  
+  @UI.hidden: true
+  Created;
+  
+  @UI.hidden: true
+  Changedby;
+}

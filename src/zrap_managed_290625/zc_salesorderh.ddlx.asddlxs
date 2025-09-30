@@ -1,0 +1,198 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'SalesOrder'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'SalesOrder'
+annotate view ZC_SALESORDERH with
+{
+  @EndUserText.label: 'SalesOrder'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'SalesOrder'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'SalesOrder'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  SalesOrder;
+  
+  @EndUserText.label: 'DocType'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'DocType'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'DocType'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  DocType;
+  
+  @EndUserText.label: 'SalesOrg'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'SalesOrg'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'SalesOrg'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  SalesOrg;
+  
+  @EndUserText.label: 'DistrChannel'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'DistrChannel'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'DistrChannel'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  DistrChannel;
+  
+  @EndUserText.label: 'Division'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Division'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'Division'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  Division;
+  
+  @EndUserText.label: 'SoldToParty'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'SoldToParty'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'SoldToParty'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  SoldToParty;
+  
+  @EndUserText.label: 'CustomerFirstName'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'CustomerFirstName'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'CustomerFirstName'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  CustomerFirstName;
+  
+  @EndUserText.label: 'CustomerLastName'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'CustomerLastName'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'CustomerLastName'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  CustomerLastName;
+  
+  @EndUserText.label: 'OrderDate'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'OrderDate'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'OrderDate'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  OrderDate;
+  
+  @EndUserText.label: 'CreatedOn'
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'CreatedOn'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'CreatedOn'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  CreatedOn;
+  
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  Locallastchanged;
+  
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  @UI.lineItem: [ {
+    position: 120 
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  Lastchanged;
+  
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  Changedby;
+}

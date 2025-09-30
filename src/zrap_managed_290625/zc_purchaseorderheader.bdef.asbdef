@@ -1,0 +1,19 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_PurchaseOrderHeader alias poh
+{
+  use create;
+  use update;
+  use delete;
+
+  use association poi { create; }
+}
+
+define behavior for ZC_PurchaseOrderItem alias poi
+{
+  use update;
+  use delete;
+
+  use association poh;
+}

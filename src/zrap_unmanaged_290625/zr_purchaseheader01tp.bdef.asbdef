@@ -1,0 +1,91 @@
+unmanaged implementation in class ZBP_R_PurchaseHeader01TP unique;
+strict ( 2 );
+define behavior for ZR_PurchaseHeader01TP alias PurchaseHeader
+implementation in class ZBP_R_PurchaseHeader01TP unique
+etag master Locallastchanged
+lock master
+authorization master( global )
+
+{
+  field ( readonly )
+   Locallastchanged,
+   Lastchanged,
+   Createdby,
+   Changedby;
+
+   field ( readonly : update )
+   PurchaseID;
+
+  create;
+  update;
+  delete;
+
+  mapping for YEKKO control ZSPurchaseHeader01_X
+  {
+    PurchaseID = PURCHASE_ID;
+    CompanyCode = COMPANY_CODE;
+    DocCategory = DOC_CATEGORY;
+    DocType = DOC_TYPE;
+    VendorID = VENDOR_ID;
+    PurchOrg = PURCH_ORG;
+    PurchGroup = PURCH_GROUP;
+    Currency = CURRENCY;
+    DocDate = DOC_DATE;
+    CreatedBy = CREATED_BY;
+    ChangedOn = CHANGED_ON;
+    Incoterms1 = INCOTERMS1;
+    Incoterms2 = INCOTERMS2;
+    PaymentTerms = PAYMENT_TERMS;
+    Language = LANGUAGE;
+    Status = STATUS;
+    Locallastchanged = LOCALLASTCHANGED;
+    Lastchanged = LASTCHANGED;
+    Created = CREATEDBY;
+    Changedby = CHANGEDBY;
+  }
+
+  association _PurchaseItem { create; }
+
+}
+
+define behavior for ZR_PurchaseItemTP alias PurchaseItem
+implementation in class ZBP_R_PurchaseItemTP unique
+etag master Locallastchanged
+lock dependent by _PurchaseHeader
+authorization dependent by _PurchaseHeader
+
+{
+  field ( readonly )
+   PurchaseID,
+   Locallastchanged;
+
+field ( readonly )
+   ItemNo;
+
+  update;
+  delete;
+
+  mapping for YEKPO control ZSPurchaseItem_X
+  {
+    PurchaseID = PURCHASE_ID;
+    ItemNo = ITEM_NO;
+    MaterialID = MATERIAL_ID;
+    Plant = PLANT;
+    StorageLocation = STORAGE_LOCATION;
+    Quantity = QUANTITY;
+    Unit = UNIT;
+    NetPrice = NET_PRICE;
+    Currency = CURRENCY;
+    DeliveryDate = DELIVERY_DATE;
+    AccountAssignment = ACCOUNT_ASSIGNMENT;
+    ItemCatergory = ITEM_CATERGORY;
+    CreatedOn = CREATED_ON;
+    Locallastchanged = LOCALLASTCHANGED;
+    Lastchanged = LASTCHANGED;
+    Createdby = CREATEDBY;
+    Changedby = CHANGEDBY;
+  }
+
+  association _PurchaseHeader;
+
+}

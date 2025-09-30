@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_SALESORDERH'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_SALESORDERH'
+  }
+}
+define service ZUI_SALESORDERH_O4 provider contracts odata_v4_ui {
+  expose ZC_SALESORDERH as soheader;
+}

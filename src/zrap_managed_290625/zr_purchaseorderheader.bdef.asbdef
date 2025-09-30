@@ -1,0 +1,53 @@
+managed implementation in class zbp_r_purchaseorderheader unique;
+strict ( 2 );
+
+define behavior for ZR_PurchaseOrderHeader alias poh
+persistent table yekko
+lock master
+authorization master ( instance )
+etag master Locallastchanged
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly: update ) PurchaseId;
+  association poi { create; }
+
+  mapping for Yekko{
+        PurchaseId = purchase_id;
+        CompanyCode = company_code;
+        DocCategory = doc_category;
+        DocType =  doc_type;
+        VendorId = vendor_id;
+        PurchOrg = purch_org;
+        PurchGroup = purch_group;
+        Currency = currency;
+        DocDate = doc_date;
+        ChangedOn = changed_on;
+        Incoterms1 = incoterms1;
+        Incoterms2 = incoterms2;
+        PaymentTerms = payment_terms;
+        Language = language;
+        Status = status;
+  }
+
+}
+
+define behavior for ZR_PurchaseOrderItem  alias poi
+persistent table yekpo
+lock dependent by poh
+authorization dependent by poh
+etag master Locallastchanged
+{
+  update;
+  delete;
+  field ( readonly ) PurchaseId;
+  field ( readonly: update ) ItemNo;
+  association poh;
+
+   mapping for Yekpo{
+        PurchaseId = purchase_id;
+        ItemNo     = item_no;
+  }
+
+}

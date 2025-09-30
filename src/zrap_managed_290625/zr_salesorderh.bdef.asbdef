@@ -1,0 +1,55 @@
+managed implementation in class ZBP_R_SALESORDERH unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_SALESORDERH alias soheader
+persistent table ZSALESORDERH
+extensible
+draft table ZSALESORDERH_D
+etag master Locallastchanged
+lock master total etag Lastchanged
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   SalesOrder;
+
+  field ( readonly )
+   Locallastchanged,
+   Lastchanged,
+   Createdby,
+   Changedby;
+
+  field ( readonly : update )
+   SalesOrder;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZSALESORDERH corresponding extensible
+  {
+    SalesOrder = sales_order;
+    DocType = doc_type;
+    SalesOrg = sales_org;
+    DistrChannel = distr_channel;
+    Division = division;
+    SoldToParty = sold_to_party;
+    CustomerFirstName = customer_first_name;
+    CustomerLastName = customer_last_name;
+    OrderDate = order_date;
+    CreatedOn = created_on;
+    Locallastchanged = locallastchanged;
+    Lastchanged = lastchanged;
+    Createdby = createdby;
+    Changedby = changedby;
+  }
+
+}
